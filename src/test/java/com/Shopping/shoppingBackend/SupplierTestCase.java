@@ -22,10 +22,10 @@ public class SupplierTestCase
 		//Insertion TestCase
 		
 		Supplier supplier=new Supplier();
-		supplier.setSuppid(3);
-		supplier.setSuppname("Aashi");
+		supplier.setSuppid(1);
+		supplier.setSuppname("AashiPandey");
 		supplier.setAddress("Bhopal");
-		supplier.setProddesc("Aashi Product");
+		
 
 		supplierDAO.insertUpdateSupplier(supplier);		
 		System.out.println("Supplier Inserted");

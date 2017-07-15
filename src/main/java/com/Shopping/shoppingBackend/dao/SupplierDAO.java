@@ -4,8 +4,6 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.*;
-import org.hibernate.Query;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -25,7 +23,7 @@ public class SupplierDAO
 	@Transactional
 	public void insertUpdateSupplier(Supplier supplier)
 	{
-		Session session=sessionFactory.getCurrentSession();
+		Session session=sessionFactory.openSession();
 		session.saveOrUpdate(supplier);
 		session.flush();
 	}
@@ -41,7 +39,10 @@ public class SupplierDAO
 	@Transactional
 	public void deleteSupplier(Supplier supplier)
 	{
-		sessionFactory.getCurrentSession().delete(supplier);
+		Session session=sessionFactory.openSession();
+		session.delete(supplier);
+		session.flush();
+		//sessionFactory.getCurrentSession().delete(supplier);
 	}
 	
 	public List<Supplier> getSupplierDetails()

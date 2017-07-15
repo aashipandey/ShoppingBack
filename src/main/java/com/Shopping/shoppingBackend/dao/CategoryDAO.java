@@ -27,10 +27,12 @@ public class CategoryDAO
 	@Transactional
 	public void insertUpdateCategory(Category category)
 	{
-		Session session=sessionFactory.getCurrentSession();
-		session.persist(category);
+		Session session=sessionFactory.openSession();
+		session.saveOrUpdate(category);
 		session.flush();
-	
+		/*session.persist(category);
+		session.flush();
+	*/
 		
 	}
 	
@@ -45,7 +47,10 @@ public class CategoryDAO
 	@Transactional
 	public void deleteCategory(Category category)
 	{
-		sessionFactory.getCurrentSession().delete(category);
+		Session session=sessionFactory.openSession();
+		session.delete(category);
+		session.flush();
+		//sessionFactory.getCurrentSession().delete(category);
 	}
 	
 	public List<Category> getCategoryDetails()
@@ -57,6 +62,11 @@ public class CategoryDAO
 		return list;
 	}
 	
+	/*@Transactional
+	public void deleteCategory(int Catid)
+	{
+		sessionFactory.openSession().delete(Catid);
+	}*/
 }
 
 

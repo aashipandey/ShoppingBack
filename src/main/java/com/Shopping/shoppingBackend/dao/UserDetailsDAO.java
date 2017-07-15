@@ -26,7 +26,7 @@ public class UserDetailsDAO
 	@Transactional
 	public void insertUpdateUserDetails(UserDetails userdetails)
 	{
-		Session session=sessionFactory.getCurrentSession();
+		Session session=sessionFactory.openSession();
 		session.saveOrUpdate(userdetails);
 		session.flush();
 	}

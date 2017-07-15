@@ -18,11 +18,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.Shopping.shoppingBackend.dao.CartDAO;
 import com.Shopping.shoppingBackend.dao.CategoryDAO;
+import com.Shopping.shoppingBackend.dao.PaymentDAO;
+/*import com.Shopping.shoppingBackend.dao.PaymentDAO;*/
 import com.Shopping.shoppingBackend.dao.ProductDAO;
 import com.Shopping.shoppingBackend.dao.SupplierDAO;
 import com.Shopping.shoppingBackend.dao.UserDetailsDAO;
 import com.Shopping.shoppingBackend.model.Cart;
 import com.Shopping.shoppingBackend.model.Category;
+import com.Shopping.shoppingBackend.model.Payment;
 import com.Shopping.shoppingBackend.model.Product;
 import com.Shopping.shoppingBackend.model.Supplier;
 import com.Shopping.shoppingBackend.model.UserDetails;
@@ -67,6 +70,7 @@ public class DBConfig
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(UserDetails.class);
 		sessionBuilder.addAnnotatedClass(Cart.class);
+		//sessionBuilder.addAnnotatedClass(Payment.class);
 
 		System.out.println("Session Factory Object Creation");
 		SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
@@ -114,4 +118,10 @@ public class DBConfig
 		System.out.println("-- CartDAO Object Creation--");
 		return new CartDAO();
 	}
+	/*@Bean(name="paymentDAO")
+	public PaymentDAO getPaymentDAO(SessionFactory sessionFactory)
+	{
+		System.out.println("-- PaymentDAO Object Creation--");
+		return new PaymentDAO();
+	}*/
 }

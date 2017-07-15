@@ -20,30 +20,17 @@ public class Product  implements Serializable
 	@Id
 	@GeneratedValue
 	int prodid;
-	
-	@NotEmpty(message = "Please enter your Product description.")
-	@Size(min = 15, max = 50, message = "Your product description must be within the specified size.")
+		
 	String proddesc;
-	
-	@NotEmpty(message = "Please enter your Product name.")
-	@Size(min = 4, max = 15, message = "Your product name must be within the specified size.")
+		
 	String prodname;
-	
-
-	@NotEmpty(message = "Please enter your category id.")
-	@Size(min = 1, max = 5, message = "Your category id must be within the specified size.")
+		
 	int catid;
 	
-	@NotEmpty(message = "Please enter your supplier id.")
-	@Size(min = 1, max = 5, message = "Your supplier id must be within the specified size.")
 	int suppid;
-	
-	@NotEmpty(message = "Please enter your quantity.")
-	@Size(min = 1, max = 50, message = "Your quantity must be within the specified size.")
+		
 	int quantity;
-	
-	@NotEmpty(message = "Please enter your price.")
-	@Size(min = 2,  message = "Your price must be within the specified size.")
+		
 	int price;
 	
 	

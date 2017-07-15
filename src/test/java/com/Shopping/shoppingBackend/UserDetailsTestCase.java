@@ -22,13 +22,14 @@ public class UserDetailsTestCase
 		
 		UserDetails userdetails=new UserDetails();
 //		userdetails.setUserId(1);
-		userdetails.setUsername("Sourabh");
-		userdetails.setPassword("aashi");
-		userdetails.setAddress("Bittan Market");
-		userdetails.setEmail("Aashipandey@gmail.com");
-		userdetails.setMobile("7389616986");
-		userdetails.setRole("ROLE_ADMIN");
-		userdetails.setCustname("rainy");
+		userdetails.setUsername("amir123");
+		userdetails.setCustname("amir");
+		userdetails.setPassword("amir");
+		userdetails.setAddress("Bhopal");
+		userdetails.setEmail("amir@gmail.com");
+		userdetails.setMobile("1234567890");
+		userdetails.setRole("ROLE_USER");
+		userdetails.setEnabled(true);
 		
 		userdetailsDAO.insertUpdateUserDetails(userdetails);		
 		System.out.println("UserDetails Inserted");
@@ -55,9 +56,9 @@ public class UserDetailsTestCase
 		
 		//Update the UserDetails
 		//UserDetails userdetails=userdetailsDAO.getUserDetails(3);
-		userdetails.setUsername("Ayaan");
+		/*userdetails.setUsername("");
 		userdetailsDAO.insertUpdateUserDetails(userdetails);
-		System.out.println("The UserDetails Updated");
+		System.out.println("The UserDetails Updated");*/
 		
 	}
 }

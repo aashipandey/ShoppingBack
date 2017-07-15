@@ -41,8 +41,8 @@ public class CartTestCase
 		for(Cart cart1:list)
 		{
 			System.out.println(cart1.getCartid()+":::");
-			System.out.println(cart1.getProductid()+":::");
-			System.out.println(cart1.getProductname()+":::");
+			System.out.println(cart1.getProdid()+":::");
+			System.out.println(cart1.getProdname()+":::");
 			System.out.println(cart1.getPrice()+":::");
 			System.out.println(cart1.getQuantity()+":::");
 		}

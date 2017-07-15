@@ -49,17 +49,15 @@ public class UserDetails implements  Serializable
 	@Size(min = 3, max = 20, message = "Your name must be within the specified size.")
 	String custname;
 	
-	
-/*
+	boolean enabled;
 	public boolean isEnabled() {
 		return enabled;
 	}
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
-	}*/
 	
-	
+	}
 	public String getUsername() {
 		return username;
 	}

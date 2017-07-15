@@ -25,8 +25,8 @@ public class CategoryTestCase
 		
 		Category category=new Category();
 		//category.setCatid(3);
-		category.setCatname("wwwIMobile");
-		category.setCatdesc("This Mobile is WIFI Enabled");
+		category.setCatname("Electronics");
+		category.setCatdesc("Personal Computer");
 
 		categoryDAO.insertUpdateCategory(category);		
 		System.out.println("Category Inserted");

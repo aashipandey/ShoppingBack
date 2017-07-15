@@ -24,9 +24,13 @@ public class ProductTestCase
 		//Insertion TestCase
 		
 		Product product=new Product();
-		product.setProdid(1);
+		//product.setProdid(1);
 		product.setProdname("Mobile");
-		
+		product.setCatid(101);
+		product.setSuppid(11);
+		product.setQuantity(100);
+		product.setPrice(12000);
+		product.setProddesc("4G LTE phones");
 
 		productDAO.insertUpdateProduct(product);		
 		System.out.println("Product Inserted");
@@ -53,9 +57,9 @@ public class ProductTestCase
 		
 		//Update the Product
 		//Product product=productDAO.getProduct(3);
-		product.setProdname("WifiEnMobile");
+		/*product.setProdname("WifiEnMobile");
 		productDAO.insertUpdateProduct(product);
-		System.out.println("The Product Updated");
+		System.out.println("The Product Updated");*/
 		
 	}
 }

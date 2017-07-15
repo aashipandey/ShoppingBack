@@ -7,8 +7,6 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.*;
-import org.hibernate.Query;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -28,7 +26,10 @@ public class CartDAO
 	@Transactional
 	public void addToCart(Cart cartitem)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(cartitem);
+		//sessionFactory.openSession().saveOrUpdate(cartitem);
+		Session session=sessionFactory.openSession();
+		session.saveOrUpdate(cartitem);
+		session.flush();
 	}
 	
 	public List<Cart> getCartItems(String username)
@@ -47,10 +48,14 @@ public class CartDAO
 	@Transactional
 	public void deleteCartItem(Cart cart)
 	{
-		sessionFactory.getCurrentSession().delete(cart);
+		/*sessionFactory.getCurrentSession().delete(cart);*/
+		Session session=sessionFactory.openSession();
+		session.delete(cart);
+		session.flush();
+
 	}
 	
-	public Cart getCartItem(int citemid)
+	public Cart getCartItem(long citemid)
 	{
 		Session session=sessionFactory.openSession();
 		
@@ -63,7 +68,10 @@ public class CartDAO
 	@Transactional
 	public void updateCartItem(Cart cart)
 	{
-		sessionFactory.getCurrentSession().update(cart);
+		//sessionFactory.getCurrentSession().update(cart);
+		Session session=sessionFactory.openSession();
+		session.saveOrUpdate(cart);
+		session.flush();
 	}
 	
 	

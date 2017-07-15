@@ -25,29 +25,18 @@ public class Cart implements Serializable
 	String status;
 	
 
-	@NotEmpty(message = "Please enter your username.")
-	@Size(min = 5, max = 25, message = "Your user name must be within the specified size.")
 	String username;
 	
 
-	@NotEmpty(message = "Please enter your product name.")
-	@Size(min = 15, max = 25, message = "Your product name must be within the specified size.")
 	String prodname;
 	
-	@NotEmpty(message = "Please enter price.")
-	@Size(min = 2, message = "Your price must be within the specified size.")
 	int price;
 	
-	@NotEmpty(message = "Please enter quantity.")
-	@Size(min = 1, message = "Your quantity must be within the specified size.")
 	int quantity;
 	
-	@NotEmpty(message = "Please enter cart id.")
-	@Size(min = 1, max=5, message = "Your cart id must be within the specified size.")
+	
 	int cartid;
 	
-	@NotEmpty(message = "Please enter product id.")
-	@Size(min = 1, max=5, message = "Your product id must be within the specified size.")
 	int prodid;
 	
 	public int getCartid() {
@@ -62,7 +51,7 @@ public class Cart implements Serializable
 	public void setcitemid(int citemid) {
 		this.citemid = citemid;
 	}
-	public int getProductid() {
+	public int getProdid() {
 		return prodid;
 	}
 	public void setProdid(int prodid) {
@@ -80,7 +69,7 @@ public class Cart implements Serializable
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getProductname() {
+	public String getProdname() {
 		return prodname;
 	}
 	public void setProdname(String prodname) {

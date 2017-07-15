@@ -5,8 +5,6 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.*;
-import org.hibernate.Query;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -26,7 +24,8 @@ public class ProductDAO
 	@Transactional
 	public void insertUpdateProduct(Product product)
 	{
-		Session session=sessionFactory.getCurrentSession();
+		Session session=sessionFactory.openSession();
+		
 		session.saveOrUpdate(product);
 		session.flush();
 	}
@@ -42,7 +41,11 @@ public class ProductDAO
 	@Transactional
 	public void deleteProduct(Product product)
 	{
-		sessionFactory.getCurrentSession().delete(product);
+		
+		Session session=sessionFactory.openSession();
+		session.delete(product);
+		session.flush();
+		//sessionFactory.getCurrentSession().delete(product);
 	}
 	
 	public List<Product> getProductDetails()
