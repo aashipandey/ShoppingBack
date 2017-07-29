@@ -1,5 +1,7 @@
 package com.Shopping.shoppingBackend.dao;
+
 import java.util.List;
+
 
 
 import javax.transaction.Transactional;
@@ -12,8 +14,8 @@ import org.springframework.stereotype.Repository;
 
 import com.Shopping.shoppingBackend.model.*;
 @Transactional
-@Repository("paymentDAO")
-public class PaymentDAO
+@Repository("shippingdetailsDAO")
+public class ShippingDetailsDAO
 {
 	@Autowired
 	SessionFactory sessionFactory;
@@ -24,22 +26,19 @@ public class PaymentDAO
 	}
 	*/
 	@Transactional
-	public void insertPayment(Payment payment)
+	public void insertShippingDetails(ShippingDetails shippingdetails)
 	{
 		Session session=sessionFactory.openSession();
-		System.out.println(1);
-		session.saveOrUpdate(payment);
-
-		System.out.println(2);
-		session.flush();
+		session.saveOrUpdate(shippingdetails);
+		//session.flush();
 	}
 	
-	public Payment getPayment(int paymentid)
+	public ShippingDetails getShippingDetails(int orderid)
 	{
 		Session session=sessionFactory.openSession();
-		Payment payment=(Payment)session.get(Payment.class,paymentid);
+		ShippingDetails shippingdetails=(ShippingDetails)session.get(Payment.class,orderid);
 		session.close();
-		return payment;
+		return shippingdetails;
 	}
 	
 	

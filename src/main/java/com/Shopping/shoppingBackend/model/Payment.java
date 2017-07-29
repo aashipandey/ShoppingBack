@@ -13,7 +13,25 @@ import javax.persistence.Table;
 @Table(name="Payment")
 public class Payment implements Serializable
 {
-	int paymentid,cartid,cardnumber,price;
+	
+	
+	@Id
+	@GeneratedValue
+	int paymentid;
+	
+	String cartid;
+	
+	String username;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	int cardnumber,price;
 
 	public int getPaymentid() {
 		return paymentid;
@@ -23,11 +41,11 @@ public class Payment implements Serializable
 		this.paymentid = paymentid;
 	}
 
-	public int getCartid() {
+	public String getCartid() {
 		return cartid;
 	}
 
-	public void setCartid(int cartid) {
+	public void setCartid(String cartid) {
 		this.cartid = cartid;
 	}
 

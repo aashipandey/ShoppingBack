@@ -4,6 +4,7 @@ package com.Shopping.shoppingBackend.model;
 import java.io.Serializable;
 
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Cart implements Serializable
 {
 	@Id
-	//@GeneratedValue
+	@GeneratedValue
 	int citemid;
 
 	
@@ -35,22 +36,28 @@ public class Cart implements Serializable
 	int quantity;
 	
 	
-	int cartid;
+	String cartid;
 	
 	int prodid;
 	
-	public int getCartid() {
+	public String getCartid() {
 		return cartid;
 	}
-	public void setCartid(int cartid) {
+	public void setCartid(String cartid) {
 		this.cartid = cartid;
 	}
-	public int getcitemid() {
+	/*public int getcitemid() {
+		return citemid;
+	}*/
+	public int getCitemid() {
 		return citemid;
 	}
-	public void setcitemid(int citemid) {
+	public void setCitemid(int citemid) {
 		this.citemid = citemid;
 	}
+	/*public void setcitemid(int citemid) {
+		this.citemid = citemid;
+	}*/
 	public int getProdid() {
 		return prodid;
 	}

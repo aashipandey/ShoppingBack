@@ -22,12 +22,9 @@ public class Supplier implements Serializable
 	
 	
 	
-	@NotEmpty(message = "Please enter your Suppliername.")
-	@Size(min = 5, max = 25, message = "Your Supplier name must be within the specified size.")
+	
 	String suppname;
 	
-	@NotEmpty(message = "Please enter your address.")
-	@Size(min = 5, max = 30, message = "Your address must be within the specified size.")
 	String address;
 
 	public int getSuppid() {

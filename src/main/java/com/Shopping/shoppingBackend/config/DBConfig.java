@@ -5,6 +5,7 @@ import java.util.Properties;
 
 
 
+
 import javax.sql.DataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,14 @@ import com.Shopping.shoppingBackend.dao.CategoryDAO;
 import com.Shopping.shoppingBackend.dao.PaymentDAO;
 /*import com.Shopping.shoppingBackend.dao.PaymentDAO;*/
 import com.Shopping.shoppingBackend.dao.ProductDAO;
+import com.Shopping.shoppingBackend.dao.ShippingDetailsDAO;
 import com.Shopping.shoppingBackend.dao.SupplierDAO;
 import com.Shopping.shoppingBackend.dao.UserDetailsDAO;
 import com.Shopping.shoppingBackend.model.Cart;
 import com.Shopping.shoppingBackend.model.Category;
 import com.Shopping.shoppingBackend.model.Payment;
 import com.Shopping.shoppingBackend.model.Product;
+import com.Shopping.shoppingBackend.model.ShippingDetails;
 import com.Shopping.shoppingBackend.model.Supplier;
 import com.Shopping.shoppingBackend.model.UserDetails;
 
@@ -42,7 +45,7 @@ public class DBConfig
 		System.out.println("Starting of the method getH2DataSource");
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:~/Users");
+		dataSource.setUrl("jdbc:h2:~/aashi");
 		dataSource.setUsername("");
 		dataSource.setPassword("");
 		System.out.println("Data Source Creation");
@@ -70,7 +73,8 @@ public class DBConfig
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(UserDetails.class);
 		sessionBuilder.addAnnotatedClass(Cart.class);
-		//sessionBuilder.addAnnotatedClass(Payment.class);
+		sessionBuilder.addAnnotatedClass(Payment.class);
+		sessionBuilder.addAnnotatedClass(ShippingDetails.class);
 
 		System.out.println("Session Factory Object Creation");
 		SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
@@ -118,10 +122,16 @@ public class DBConfig
 		System.out.println("-- CartDAO Object Creation--");
 		return new CartDAO();
 	}
-	/*@Bean(name="paymentDAO")
+	@Bean(name="paymentDAO")
 	public PaymentDAO getPaymentDAO(SessionFactory sessionFactory)
 	{
 		System.out.println("-- PaymentDAO Object Creation--");
 		return new PaymentDAO();
-	}*/
+	}
+	@Bean(name="shippingdetailsDAO")
+	public ShippingDetailsDAO getShippingDetailsDAO(SessionFactory sessionFactory)
+	{
+		System.out.println("-- CartDAO Object Creation--");
+		return new ShippingDetailsDAO();
+	}
 }

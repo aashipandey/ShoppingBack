@@ -22,13 +22,13 @@ public class UserDetailsTestCase
 		
 		UserDetails userdetails=new UserDetails();
 //		userdetails.setUserId(1);
-		userdetails.setUsername("amir123");
-		userdetails.setCustname("amir");
-		userdetails.setPassword("amir");
+		userdetails.setUsername("rainy");
+		userdetails.setCustname("rainy");
+		userdetails.setPassword("12345");
 		userdetails.setAddress("Bhopal");
-		userdetails.setEmail("amir@gmail.com");
+		userdetails.setEmail("rainy@gmail.com");
 		userdetails.setMobile("1234567890");
-		userdetails.setRole("ROLE_USER");
+		userdetails.setRole("ROLE_ADMIN");
 		userdetails.setEnabled(true);
 		
 		userdetailsDAO.insertUpdateUserDetails(userdetails);		

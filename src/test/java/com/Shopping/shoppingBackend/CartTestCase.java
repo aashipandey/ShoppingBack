@@ -24,8 +24,8 @@ public class CartTestCase
 		//Insertion TestCase
 		
 		Cart cart=new Cart();
-		cart.setCartid(3);
-		cart.setcitemid(3);
+		cart.setCartid("one");
+		//cart.setCitemid(3);
 		cart.setProdname("Laptop");
 		cart.setStatus("N");
 		cart.setProdid(1);

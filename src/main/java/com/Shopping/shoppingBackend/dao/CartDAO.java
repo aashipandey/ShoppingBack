@@ -55,7 +55,7 @@ public class CartDAO
 
 	}
 	
-	public Cart getCartItem(long citemid)
+	public Cart getCartItem(int citemid)
 	{
 		Session session=sessionFactory.openSession();
 		
